@@ -12,18 +12,19 @@
 ### Association
 - has_many :messages
 - has_many :groups, through: :groups_users
-
+- has_many :groups_users
 
 ## groups テーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |id|inteager|null: false, unique: true|
-|group_name|string|index: true, null: false|
+|name|string|index: true, null: false|
 
 ### Association
 - has_many :messages
 - has_many :users, through: :groups_users
+- has_many :groups_users
 
 ## message テーブル
 
