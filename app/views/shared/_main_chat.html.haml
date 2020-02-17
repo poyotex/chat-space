@@ -1,0 +1,46 @@
+.chat-main
+  .group-info
+    .chat-header
+      .chat-header__title
+        test
+        .member
+          Member : masa
+      .chat-header__edit-btn
+        = link_to 'Edit',root_path,class:'chat-header__edit-btn__link'
+  .messages
+    .message
+      .message-info
+        .message-info__name
+          masa
+        .message-info__date
+          2020/02/15(Sat) 10:03:01
+      .post-message
+        元気ですか
+
+    .message
+      .message-info
+        .message-info__name
+          poyo
+        .message-info__date
+          2020/02/15(Sat) 10:33:01
+      .post-message
+        こんにちは
+
+    .message
+      .message-info
+        .message-info__name
+          momo
+        .message-info__date
+          2020/02/15(Sat) 18:03:01
+      .post-message
+        こんばんは
+
+  .message-form
+    %form.new-message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = fa_icon 'image'
+          %input{type: "file", class: "input-box__image__file"}
+      %imput{type: "submit", class: "submit-btn"}
+        Send
