@@ -4,26 +4,15 @@
       .top-items__name
         = current_user.name
       .top-items__icons
-        = link_to root_path,class: 'top-items__icons__link' do
+        = link_to new_group_path,class: 'top-items__icons__link' do
           = fa_icon 'edit' ,class: 'top-items__icons__icon'
         = link_to edit_user_path(current_user),class: 'top-items__icons__link' do
           = fa_icon 'cog' ,class: 'top-items__icons__licon'
   .group-list
-    .group
-
-      .group__title
-        techcamp
-      .group__message
-        まだメッセージはありません
-
-    .group
-      .group__title
-        今日の作業日報
-      .group__message
-        私が間違っておりました
-
-    .group
-      .group__title
-        今日の天気
-      .group__message
-        晴れ
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__title
+            = group.name
+          .group__message
+            = group.show_last_message

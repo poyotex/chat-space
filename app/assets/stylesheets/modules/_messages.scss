@@ -12,7 +12,7 @@ $blue: #38aef0;
 
 .side-bar{
   width: 300px;
-  height: 100vh;
+  height:100vh;
     .user-name{
       display: flex;
       align-items: center;
@@ -51,7 +51,7 @@ $blue: #38aef0;
       align-items: center;
       flex-direction: column;
       width: 300px;
-      height: calc(100vh - 100px);
+      height: 100%;
       background-color: #2f3e51;
         .group{
           width: 260px;
@@ -113,7 +113,7 @@ $blue: #38aef0;
       }
   }
   .messages{
-    height: calc(100vh - 100px - 90px);
+    min-height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
             padding: 35px 40px;
       .message{
@@ -131,55 +131,58 @@ $blue: #38aef0;
               }
           }
           .post-message{
+            .post-message__content{
             padding-bottom: 46px;
             color: #434A54;
             font-size: 14px;
+            }
+            .post-message__image{
+              width: 200px;
+              object-fit: cover;
+            }
           }
       }
   }
-  .message-form{
+  .form{
+
     height: 90px;
     background-color: #d2d2d2;
     padding: 20px 40px;
-    .new-message{
+
+    form{
       display: flex;
-      justify-content: space-between;
-      .input-box{
-        display: flex;
+
+      .form__mask{
         position: relative;
+      }
+      .form__message{
         height: 50px;
         width: 100%;
-        background-color: #d2d2d2;
-        &__text{
-          width: 100%;
-          padding: 0 0 0 10px;
-          line-height: 50px;
-          color: #434a54;
-          border-style: none;
-          
-        }
-        &__image{
-          cursor: pointer;
-          position: absolute;
-          right: 0;
-          margin-right: 10px;
-          line-height: 50px;
-          font-size: 20px;
-            &__file{
-              display: none;
-            }
-            }
-        }
+        color: #434A54;
+        border-style: none;
+        padding: 0 0px 0 10px;
       }
-      .submit-btn{
-        margin-left: 15px;
-        height: 50px;
-        width: 100px;
+      .form__mask__image{
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
         line-height: 50px;
-        text-align: center;
-        color: #eeeeee;
+        font-size: 20px;
+      }
+    
+        .hidden{
+          display: none;
+        }
+    
+      .form__submit{
+        width: 100px;
+        height: 50px;
+        padding: 0 30px;
+        margin-left: 15px;
         background-color: $blue;
+        color: $white;
         cursor: pointer;
       }
     }
-  }
+  } 
+}
