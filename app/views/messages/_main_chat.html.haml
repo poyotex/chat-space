@@ -5,8 +5,9 @@
         = @group.name
         .member
           Member : 
-          - current_user.groups.each do |group|
-            =group.users.name
+          - @group.users.each do |user|
+            = user.name
+
       .chat-header__edit-btn
         = link_to 'Edit',edit_group_path(@group.id),class:'chat-header__edit-btn__link'
   .messages
