@@ -81,3 +81,6 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
+
+gem 'fog-aws'
+
